@@ -113,7 +113,7 @@ while index < source.length do
   dir_info_hash = source[index]
   director_name = dir_info_hash[:name]
   directors_movies = dir_info_hash[:movies]
-a_o_a_movies_with_director_names << movies_with_director_key(director_name, directors_movies)
+a_o_a_movies_by_dir << movies_with_director_key(director_name, directors_movies)
   index +=1
 end
 a_o_a_movies_by_dir 
