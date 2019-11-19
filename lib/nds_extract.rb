@@ -1,10 +1,10 @@
 # Provided, don't edit
 require 'directors_database'
 
+pp directors_database
+
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
-
-pp directors_database
 
 
 def flatten_a_o_a(aoa)
@@ -80,15 +80,17 @@ def gross_per_studio(collection)
   result = {}
   index = 0 
   
-  while index < collection_length do 
+  while index < collection.length do 
     movie = collection[index]
     
-    if result[movie[:studio]]
+    if !result[movie[:studio]]
       result [movie[:studio]] = movie [:worldwide_gross]
       
     else
       result [movie[:studio]] += movie [:worldwide_gross]
   end 
+  index +=1 
+end 
   result 
 end
 
@@ -114,7 +116,7 @@ while index < source.length do
 a_o_a_movies_with_director_names << movies_with_director_key(director_name, directors_movies)
   index +=1
 end
-a_o_a_movies_with_director_names
+a_o_a_movies_by_dir 
 end 
 
 # ----------------    End of Your Code Region --------------------
